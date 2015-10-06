@@ -31,50 +31,50 @@ public class GildedRose
 	}
 	
 	
-	public static void updateSellIn(Item i){
+	public static void updateSellIn(Item item){
 		
 		
-			if (!"Sulfuras, Hand of Ragnaros".equals(items.get(i).getName()))
+			if (!"Sulfuras, Hand of Ragnaros".equals(item.getName()))
 			{
-				items.get(i).setSellIn(items.get(i).getSellIn() - 1);
+				item.setSellIn(item.getSellIn() - 1);
 			}
 		
 	}
-	public static void updateQuality(Item i){
+	public static void updateQuality(Item item){
 		
-		if ((!"Aged Brie".equals(items.get(i).getName()))
-				&& !"Backstage passes to a TAFKAL80ETC concert".equals(items.get(i).getName()))
+		if ((!"Aged Brie".equals(item.getName()))
+				&& !"Backstage passes to a TAFKAL80ETC concert".equals(item.getName()))
 		{
-			if (items.get(i).getQuality() > 0)
+			if (item.getQuality() > 0)
 			{
-				if (!"Sulfuras, Hand of Ragnaros".equals(items.get(i).getName()))
+				if (!"Sulfuras, Hand of Ragnaros".equals(item.getName()))
 				{
-					items.get(i).setQuality(items.get(i).getQuality() - 1);
+					item.setQuality(item.getQuality() - 1);
 				}
 			}
 		}
 		
 		else
 		{
-			if (items.get(i).getQuality() < QUALITY_MAX)
+			if (item.getQuality() < QUALITY_MAX)
 			{
-				items.get(i).setQuality(items.get(i).getQuality() + 1);
+				item.setQuality(item.getQuality() + 1);
 	
-				if ("Backstage passes to a TAFKAL80ETC concert".equals(items.get(i).getName()))
+				if ("Backstage passes to a TAFKAL80ETC concert".equals(item.getName()))
 				{
-					if (items.get(i).getSellIn() < 11)
+					if (item.getSellIn() < 11)
 					{
-						if (items.get(i).getQuality() < QUALITY_MAX)
+						if (item.getQuality() < QUALITY_MAX)
 						{
-							items.get(i).setQuality(items.get(i).getQuality() + 1);
+							item.setQuality(item.getQuality() + 1);
 						}
 					}
 	
-					if (items.get(i).getSellIn() < 6)
+					if (item.getSellIn() < 6)
 					{
-						if (items.get(i).getQuality() < QUALITY_MAX)
+						if (item.getQuality() < QUALITY_MAX)
 						{
-							items.get(i).setQuality(items.get(i).getQuality() + 1);
+							item.setQuality(item.getQuality() + 1);
 						}
 					}
 				}
