@@ -31,7 +31,7 @@ public class GildedRose
 	}
 	
 	
-	public static void updateSellIn(int i){
+	public static void updateSellIn(Item i){
 		
 		
 			if (!"Sulfuras, Hand of Ragnaros".equals(items.get(i).getName()))
@@ -40,7 +40,7 @@ public class GildedRose
 			}
 		
 	}
-	public static void updateQuality(int i){
+	public static void updateQuality(Item i){
 		
 		if ((!"Aged Brie".equals(items.get(i).getName()))
 				&& !"Backstage passes to a TAFKAL80ETC concert".equals(items.get(i).getName()))
@@ -124,8 +124,9 @@ public class GildedRose
 		{
 			
 			
-			updateSellIn(i);
-			updateQuality(i);
+			updateSellIn(items.get(i));
+			
+			updateQuality(items.get(i));
 			
 		
 		}
