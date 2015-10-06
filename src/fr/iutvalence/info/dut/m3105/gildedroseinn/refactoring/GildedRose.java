@@ -23,15 +23,33 @@ public class GildedRose
 		items.add(new Item("Sulfuras, Hand of Ragnaros", 0, 80));
 		items.add(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20));
 		items.add(new Item("Conjured Mana Cake", 3, 6));
-
+		
+		updateSellIn();
 		updateShop();
 	}
+	
+	
+	public static void updateSellIn(){
+		for (int i = 0; i < items.size(); i++)
+		{
+			if (!"Sulfuras, Hand of Ragnaros".equals(items.get(i).getName()))
+			{
+				items.get(i).setSellIn(items.get(i).getSellIn() - 1);
+			}
+		}
+	}
+	
+	
 
 	// update the shop (each item)
 	public static void updateShop()
 	{
 		for (int i = 0; i < items.size(); i++)
 		{
+			
+			
+			
+			
 			if ((!"Aged Brie".equals(items.get(i).getName()))
 					&& !"Backstage passes to a TAFKAL80ETC concert".equals(items.get(i).getName()))
 			{
@@ -43,6 +61,11 @@ public class GildedRose
 					}
 				}
 			}
+			
+			
+			
+			
+			
 			else
 			{
 				if (items.get(i).getQuality() < 50)
@@ -69,11 +92,14 @@ public class GildedRose
 					}
 				}
 			}
-
-			if (!"Sulfuras, Hand of Ragnaros".equals(items.get(i).getName()))
-			{
-				items.get(i).setSellIn(items.get(i).getSellIn() - 1);
-			}
+			
+			
+			
+		
+			
+			
+			
+			
 
 			if (items.get(i).getSellIn() < 0)
 			{
@@ -102,6 +128,10 @@ public class GildedRose
 					}
 				}
 			}
+		
+		
+		
+		
 		}
 	}
 
